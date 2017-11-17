@@ -1,8 +1,28 @@
+function rent() {
+
+	var errormessage = "";
+	
+	if (document.carForm.fullName.value == "") {
+	errormessage += "Enter your Name \n";
+}
+
+	if (document.carForm.fullName.value == "") {
+	errormessage += "Enter your Name \n";
+	}
+
+	if (errormessage != "") {
+	alert(errormessage);
+	return false;
+	}	
+}
+
+
+
    var cars = { 
 	 name: ["Economy", "Midsize"],
-	 economyCars: 125,
+	 economyCars: 1,
 	 economyCarsBooked: 0,
-	 midsizeCars: 100,
+	 midsizeCars: 1,
 	 midsizeCarsBooked: 0,
 	 
 	  ecarFunction: function() {
