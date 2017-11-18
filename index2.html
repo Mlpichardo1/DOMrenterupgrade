@@ -40,7 +40,7 @@
 	
 	<script>
 	var rentalName = {
-	 nameOfRenter: "Manny",
+	 nameOfRenter: "",
 	 carType: ["", ""],
 	}
 
@@ -50,27 +50,35 @@
             type: "Economy",
             Price:"99",
             available: 3,
+            rented: 0,
         },
         {
             type: "Midsize",
             Price:"149",
             available: 2,
+            rented: 0,
        }
    ]
    }
-
-	function getPrice() {
+	 
+function avail() {
+	var carAvail= document.getElementById("carAvail");
+        if (document.getElementById("carsRent").value === "$99") {
+            carAvail.innerHTML = cars.rentals[0].available;
+        } else if (document.getElementById("carsRent").value === "$149") {
+            carAvail.innerHTML = cars.rentals[1].available;
+        }
+}	    
+function getPrice() {
     var carsRent = document.getElementById("carsRent");
     var divprice = document.getElementById("divprice");
-    var carAvail = document.getElementById("carAvail");
+    var result = avail();
+    
+ divprice.innerHTML = carsRent.value;
+}
+    // carAvail.innerHTML = cars.rentals.available;
 
-console.log(carsRent);
-console.log(carAvail);
-
-    divprice.innerHTML = carsRent.value;
-    console.log(divprice.innerHTML);
-    carAvail.innerHTML = cars.rentals.available;
-	
+// document.getElementById("demo").innerHTML = ;
 	
     // function rent() {
     // if (divprice() == "0") {
@@ -79,8 +87,8 @@ console.log(carAvail);
     // }
     // }
 
-
-};
+// }
+// };
 	</script> 
 	<script src="objects1.js">
 	</script>
