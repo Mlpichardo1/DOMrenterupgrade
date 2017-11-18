@@ -10,33 +10,48 @@
 <body>
 	<h1>Business Name</h1>
 	<p>Enterprise Car Rentals</p>
-	<h3>Economy Cars</h3>
-	<p id="ecars"></p>
-	<h3>Economy Cars Available</h3>
-	<p id="ecarsAvail"></p>
-	<h3>Midsize Cars</h3>
-	<p id="midcars"></p>
-	<h3>Midsize Cars Available</h3>
-	<p id="midcarsAvail"></p><br>
+	<!--<h3>Economy Cars</h3>-->
+	<!--<p id="ecars"></p>-->
+	<!--<h3>Economy Cars Available</h3>-->
+	<!--<p id="ecarsAvail"></p>-->
+	<!--<h3>Midsize Cars</h3>-->
+	<!--<p id="midcars"></p>-->
+	<!--<h3>Midsize Cars Available</h3>-->
+	<!--<p id="midcarsAvail"></p><br>-->
 	<h4>Rent a Vehicle </h4>
-	<form action="/action_page.php" form name="carForm">
+	<form name="carForm">
     Full Name:<br>
-  <input type="text" name="fullName"><br>
+  <form action="/action_page.php" method="post">
+  <input type="text" name="fname" required>
      Vehicle Type:
-  <select name="cars">
-    <option value="ecars">Economy Car</option>
-    <option value="midcars">Mid-Size Car</option>
-    <option value="fiat" selected>Fiat</option>
-    <option value="audi">Audi</option>
+  <select id="cars" onchange="getPrice()">
+  	<div id="divprice"></div>
+  	<option value=0>Choose Vehicle</option>
+    <option value="$99">Economy Car</option>
+    <option value="$149">Mid-Size Car</option><br>
   </select>
-  	<input type="submit" value="Submit!" onclick= "return rent()">
+  <div>Price: <div id="divprice"></div></div>
+  <div>Cars Available: <div id="carAvail"></div></div>
+  	<input type="submit" value="Submit!" onsubmit= "return rent()">
 </form>
-     
-	<button onclick="availFunction()" type="button">Update Availability</button>
-	<button onclick="rentCar()" type="button">Rent 1 Economy Car</button>
-	<button onclick="rentMidcar()" type="button">Rent 1 Midsize Car</button>
+	<!--< onclick="availFunction()" type="button">Update Availabilitybutton</button>-->
+	<!--<button onclick="rentCar()" type="button">Rent 1 Economy Car</button>-->
+	<!--<button onclick="rentMidcar()" type="button">Rent 1 Midsize Car</button>-->
 	
 	<script>
+	function getPrice() {
+    var cars = document.getElementById("cars");
+    var divprice = document.getElementById("divprice");
+
+    divprice.innerHTML = cars.value;
+    
+    function rent() {
+    if (getPrice() == "") {
+    	alert ("error: Vehicle type is not selected");
+    	return false;
+    }
+    }
+};
 
 	</script> 
 	<script src="objects1.js">
