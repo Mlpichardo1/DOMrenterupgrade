@@ -1,19 +1,13 @@
+ // var cars = { 
+	 //name: ["Economy", "Midsize"],
+	 //economyCars: 3,
+	 //economyCarsBooked: 0,
+	 //midsizeCars: 5,
+	 //midsizeCarsBooked: 0,
+	 //econPrice: 99,
+	 //midPrice: 149,
+  // }
 
-	var rentalName = {
-	 nameOfRenter: "Manny Pichardo",
-	 carType: ["Economy", "Midsize"],
-	};
-
-   var cars = { 
-	 name: ["Economy", "Midsize"],
-	 economyCars: 3,
-	 economyCarsBooked: 0,
-	 midsizeCars: 5,
-	 midsizeCarsBooked: 0,
-	 econPrice: 99,
-	 midPrice: 149,
-   }
-	 
 	  //ecarFunction: function() {
 	  // return this.economyCars - this.economyCarsBooked;
 	  //},
