@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+	<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 	<title>Document</title>
 </head>
 <body>
-	<h1>Business Name</h1>
-	<p>Enterprise Car Rentals</p>
-	<!--<h3>Economy Cars</h3>-->
+	<h1>Enterprise Car Rentals</h1><!--<h3>Economy Cars</h3>-->
 	<!--<p id="ecars"></p>-->
 	<!--<h3>Economy Cars Available</h3>-->
 	<!--<p id="ecarsAvail"></p>-->
@@ -18,79 +16,45 @@
 	<!--<p id="midcars"></p>-->
 	<!--<h3>Midsize Cars Available</h3>-->
 	<!--<p id="midcarsAvail"></p><br>-->
-	<h4>Rent a Vehicle </h4>
-	<form name="carForm">
-    Full Name:<br>
-  <form action="/action_page.php" method="post">
-  <input type="text" name="fname" required>
-     Vehicle Type:
-  <select id="carsRent" onchange="getPrice()">
-  	<div id="divprice"></div>
-  	<option value=0>Choose Vehicle</option>
-    <option value="$99">Economy Car</option>
-    <option value="$149">Mid-Size Car</option><br>
-  </select>
-  <div>Price: <div id="divprice"></div></div>
-  <div>Cars Available: <div id="carAvail"></div></div>
-  	<input type="submit" value="Submit!" onsubmit= "return rent()">
-</form>
-	<!--< onclick="availFunction()" type="button">Update Availabilitybutton</button>-->
-	<!--<button onclick="rentCar()" type="button">Rent 1 Economy Car</button>-->
-	<!--<button onclick="rentMidcar()" type="button">Rent 1 Midsize Car</button>-->
-	
-	<script>
-	var rentalName = {
-	 nameOfRenter: "",
-	 carType: ["", ""],
-	}
+	<h3>Rent a Vehicle</h3>
+	<h2></h2>
+	<form id="carForm">
+		<label>Full Name:</label><br>
+		<form action="/action_page.php" id="renterInfo" method="post">
+			<input name="fname" required="" type="text">
+			<div id="radialSection">
+				<label>Vehicle Type:</label>
+			</div>
+			<div id="carInfo">
+				<h3>Vehicle Information</h3>
+				<p>Available: <span id="available" ></span></p>
+                <p>Price: <span id="price"></span></p>
+                <input onsubmit="return rent()" type="submit" value="Submit!">
+			</div><span></span>
+		</form>
+		
+		<!--< onclick="availFunction()" type="button">Update Availabilitybutton</button>-->
+		<!--<button onclick="rentCar()" type="button">Rent 1 Economy Car</button>-->
+		<!--<button onclick="rentMidcar()" type="button">Rent 1 Midsize Car</button>-->
+		<span>
+		<script>
+		   
+		  // carAvail.innerHTML = cars.rentals.available;
 
-   var cars = {
-    rentals: [
-        {
-            type: "Economy",
-            Price:"99",
-            available: 3,
-            rented: 0,
-        },
-        {
-            type: "Midsize",
-            Price:"149",
-            available: 2,
-            rented: 0,
-       }
-   ]
-   }
-	 
-function avail() {
-	var carAvail= document.getElementById("carAvail");
-        if (document.getElementById("carsRent").value === "$99") {
-            carAvail.innerHTML = cars.rentals[0].available;
-        } else if (document.getElementById("carsRent").value === "$149") {
-            carAvail.innerHTML = cars.rentals[1].available;
-        }
-}	    
-function getPrice() {
-    var carsRent = document.getElementById("carsRent");
-    var divprice = document.getElementById("divprice");
-    var result = avail();
-    
- divprice.innerHTML = carsRent.value;
-}
-    // carAvail.innerHTML = cars.rentals.available;
+		// document.getElementById("demo").innerHTML = ;
+		  
+		  // function rent() {
+		  // if (divprice() == "0") {
+		  //  alert ("error: Vehicle type is not selected");
+		  //  return false;
+		  // }
+		  // }
 
-// document.getElementById("demo").innerHTML = ;
-	
-    // function rent() {
-    // if (divprice() == "0") {
-    // 	alert ("error: Vehicle type is not selected");
-    // 	return false;
-    // }
-    // }
-
-// }
-// };
-	</script> 
-	<script src="objects1.js">
-	</script>
+		// }
+		// };
+		</script> 
+		<script src="objects1.js">
+		</script></span>
+	</form>
 </body>
 </html>
