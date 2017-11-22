@@ -1,14 +1,14 @@
 var cars = {
     rentals: [
         {
-            type: "Economy",
-            Price:"99",
+            name: "Economy",
+            price:"99",
             available: 3,
             rented: 0,
         },
         {
-            type: "Midsize",
-            Price:"149",
+            name: "Midsize",
+            price:"149",
             available: 2,
             rented: 0,
        }
@@ -27,28 +27,26 @@ var cars = {
 //  divprice.innerHTML = carsRent.value;	
 // }
 
-for (var i = 0; i < cars.rentals.length;) {
-   var selectCar = document.createElement("SELECT");
-   selectCar.setAttribute("type", "option");
-   selectCar.setAttribute("name", "carType");
-   selectCar.setAttribute("value", i);
-   selectCar.setAttribute("id", "car" + i);
-   selectCar.setAttribute("onclick", "getDetails(" + i + ")");
-   var radioLbl = document.createElement("LABEL");
-   radioLbl.innerHTML = cars.rentals[i].type;
-   document.getElementById("radialSection").appendChild(selectCar);
+function displayDetails(car) {
+    document.getElementById("price").innerHTML = cars.rentals[car].price;
+    document.getElementById("carsAvail").innerHTML = cars.rentals[car].available;
 }
 
+// function carOptions() {
+//     var x = document.getElementById("carType");
+//     var option = document.createElement("option");
+//     option.text = "Economy";
 
-
-// function avail() {
-// 	var carAvail= document.getElementById("carAvail");
-//         if (document.getElementById("carsRent").value === "$99") {
-//             carAvail.innerHTML = cars.rentals[0].available;
-//         } else if (document.getElementById("carsRent").value === "$149") {
-//             carAvail.innerHTML = cars.rentals[1].available;
-//         }
-// }	    
+for (var i = 0; i < cars.rentals.length; i++) {
+var selectCar = document.createElement("OPTION");
+   selectCar.setAttribute("type", "option");
+   selectCar.setAttribute("name", "vehType");
+   selectCar.setAttribute("value", i);
+   selectCar.setAttribute("id", "car" + i);
+   selectCar.setAttribute("onclick", "displayDetails(" + i + ")");
+   selectCar.innerHTML = cars.rentals[i].name;
+   document.getElementById("carOptions").appendChild(selectCar);
+}
 
 	  //ecarFunction: function() {
 	  // return this.economyCars - this.economyCarsBooked;

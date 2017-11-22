@@ -19,15 +19,22 @@
 	<h3>Rent a Vehicle</h3>
 	<h2></h2>
 	<form id="carForm">
-		<label>Full Name:</label><br>
+		<label>Full Name: </label>
 		<form action="/action_page.php" id="renterInfo" method="post">
 			<input name="fname" required="" type="text">
-			<div id="radialSection">
+			<div id="radialSection"><br>
 				<label>Vehicle Type:</label>
-			</div>
+				<select id="carOptions">
+					
+				</select>
+				</div>
+  <!--<option>Choose Vehicle Type</option>-->
+  <!--<option>Economy</option>-->
+  <!--<option>Midsize</option>-->
+
 			<div id="carInfo">
 				<h3>Vehicle Information</h3>
-				<p>Available: <span id="available" ></span></p>
+				<p>Available: <span id="carsAvail" ></span></p>
                 <p>Price: <span id="price"></span></p>
                 <input onsubmit="return rent()" type="submit" value="Submit!">
 			</div><span></span>
