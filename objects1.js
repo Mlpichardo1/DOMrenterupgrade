@@ -27,12 +27,6 @@ var cars = {
 //  divprice.innerHTML = carsRent.value;	
 // }
 
-function displayDetails(car) {
-    document.getElementById("carPrice").innerHTML = cars.rentals[car].price;
-    document.getElementById("carsAvail").innerHTML = cars.rentals[car].available;
-    
-}
-
 // function displayDetails(car)
 // {
 // var eID = document.getElementById("carOptions");
@@ -52,11 +46,15 @@ var selectCar = document.createElement("OPTION");
    selectCar.setAttribute("value", i);
    selectCar.setAttribute("id", "car" + i);
    selectCar.setAttribute("onchange", "displayDetails(" + i + ")");
-//   var chosenoption = selectCar.options[selectCar.selectedIndex]
    selectCar.innerHTML = cars.rentals[i].name;
    document.getElementById("carOptions").appendChild(selectCar);
+  
 }
-
+function displayDetails(car) {
+    document.getElementById("carPrice").innerHTML = cars.rentals[car].price;
+    document.getElementById("carsAvail").innerHTML = cars.rentals[car].available;
+    if 
+}
 	  //ecarFunction: function() {
 	  // return this.economyCars - this.economyCarsBooked;
 	  //},
