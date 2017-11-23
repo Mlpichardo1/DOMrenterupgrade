@@ -28,10 +28,18 @@ var cars = {
 // }
 
 function displayDetails(car) {
-    document.getElementById("price").innerHTML = cars.rentals[car].price;
+    document.getElementById("carPrice").innerHTML = cars.rentals[car].price;
     document.getElementById("carsAvail").innerHTML = cars.rentals[car].available;
+    
 }
 
+// function displayDetails(car)
+// {
+// var eID = document.getElementById("carOptions");
+// var dayVal = eID.options[eID.selectedIndex].selected;
+// document.getElementById("carPrice").innerHTML = cars.rentals[car].price;
+// document.getElementById("carsAvail").innerHTML = cars.rentals[car].available;
+// }
 // function carOptions() {
 //     var x = document.getElementById("carType");
 //     var option = document.createElement("option");
@@ -39,11 +47,12 @@ function displayDetails(car) {
 
 for (var i = 0; i < cars.rentals.length; i++) {
 var selectCar = document.createElement("OPTION");
-   selectCar.setAttribute("type", "option");
+   selectCar.setAttribute("type", "select");
    selectCar.setAttribute("name", "vehType");
    selectCar.setAttribute("value", i);
    selectCar.setAttribute("id", "car" + i);
-   selectCar.setAttribute("onclick", "displayDetails(" + i + ")");
+   selectCar.setAttribute("onchange", "displayDetails(" + i + ")");
+//   var chosenoption = selectCar.options[selectCar.selectedIndex]
    selectCar.innerHTML = cars.rentals[i].name;
    document.getElementById("carOptions").appendChild(selectCar);
 }

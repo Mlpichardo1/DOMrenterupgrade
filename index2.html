@@ -24,7 +24,7 @@
 			<input name="fname" required="" type="text">
 			<div id="radialSection"><br>
 				<label>Vehicle Type:</label>
-				<select id="carOptions">
+				<select id="carOptions" onchange="displayDetails()">
 					
 				</select>
 				</div>
@@ -35,7 +35,7 @@
 			<div id="carInfo">
 				<h3>Vehicle Information</h3>
 				<p>Available: <span id="carsAvail" ></span></p>
-                <p>Price: <span id="price"></span></p>
+                <p>Price: <span id="carPrice"></span></p>
                 <input onsubmit="return rent()" type="submit" value="Submit!">
 			</div><span></span>
 		</form>
