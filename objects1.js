@@ -51,9 +51,9 @@ var selectCar = document.createElement("OPTION");
   
 }
 function displayDetails(car) {
+    if 
     document.getElementById("carPrice").innerHTML = cars.rentals[car].price;
     document.getElementById("carsAvail").innerHTML = cars.rentals[car].available;
-    if 
 }
 	  //ecarFunction: function() {
 	  // return this.economyCars - this.economyCarsBooked;
